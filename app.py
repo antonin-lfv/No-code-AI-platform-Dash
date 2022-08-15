@@ -1,4 +1,5 @@
 from dash import Dash, html, dcc
+import dash_bootstrap_components as dbc
 import dash
 from config import *
 
@@ -48,8 +49,31 @@ app.layout = html.Div([
                                ),
                         className="nav-item"
                     ),
+                    dbc.DropdownMenu(
+                        children=[
+                            dbc.DropdownMenuItem("KNN", href="/knn"),
+                            dbc.DropdownMenuItem("KMeans", href="/kmeans"),
+                            dbc.DropdownMenuItem("SVM", href="/svm"),
+                            dbc.DropdownMenuItem("Decision tree", href="/decision_tree"),
+                        ],
+                        label="Classifications",
+                        nav=True,
+                        in_navbar=True,
+                            ),
+                    dbc.DropdownMenu(
+                        children=[
+                            dbc.DropdownMenuItem("PCA", href="/pca"),
+                            dbc.DropdownMenuItem("UMAP", href="/umap"),
+                            dbc.DropdownMenuItem("LLE", href="/lle"),
+                        ],
+                        label="Réduction de dimension",
+                        nav=True,
+                        in_navbar=True,
+                    ),
                     # End navbar links
-                ]),
+                ],
+                    className="navbar-nav"
+                ),
                 className="collapse navbar-collapse", id="navbarNavDropdown"
             )
 
@@ -57,18 +81,9 @@ app.layout = html.Div([
         className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
     ),
 
-    html.Div(
-        [
-            html.Div(
-                dcc.Link(
-                    f"{page['name']} - {page['path']} - {page['relative_path']}", href=page["relative_path"]
-                )
-            )
-            for page in dash.page_registry.values()
-        ]
-    ),
-
     # Content #
+    html.Br(),
+    html.Br(),
     html.Br(),
     dash.page_container,
     # End content #
