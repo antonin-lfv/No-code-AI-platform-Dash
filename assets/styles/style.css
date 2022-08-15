@@ -1,0 +1,113 @@
+/* For text */
+* , ::before, ::after {
+    font-family: Sans-Serif, serif;
+    color: #222f3e;
+    word-spacing: 2px;
+    line-height: 1.4;
+    font-size: small;
+}
+
+h3 {
+  margin: 0;
+}
+
+a,
+a:focus,
+a:hover {
+ text-decoration: none;
+}
+a:link { /* Hyperliens */
+    color: cornflowerblue;
+}
+
+a:hover { /* Hyperliens */
+    color: royalblue;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    height: 400px;
+    overflow-x: auto;
+    display: block;
+}
+
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.first_titre {
+    font-size: 60px !important;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+.intro {
+    text-align: justify;
+}
+
+.grand_titre {
+    font-size: 30px !important;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
+.section {
+    font-size: 15px !important;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #111111;
+    text-decoration-thickness: 3px;
+}
+
+.petite_section {
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.nom_colonne_page3 {
+    font-size: 17px !important;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    text-decoration-thickness: 1px;
+}
+
+/* For images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Bootstrap alert - fit the text */
+.alert {
+  display:inline-block;
+}
+
+.dropdown-menu {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.center-block {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+}
+
+.accordion-body{
+    max-height: 50vh;
+    overflow-y: auto;
+}
