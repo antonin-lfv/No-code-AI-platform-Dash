@@ -24,14 +24,6 @@ a:hover { /* Hyperliens */
     color: royalblue;
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    height: 400px;
-    overflow-x: auto;
-    display: block;
-}
-
 
 td, th {
     border: 1px solid #dddddd;

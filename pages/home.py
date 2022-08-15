@@ -16,7 +16,6 @@ layout = html.Div(children=[
 
     html.Div([
         html.Div([
-            html.Div(className="col-1"),
             html.Div([
                 html.P("""Bienvenue sur la no-code AI platform ! Déposez vos datasets csv ou excel ou
                     choisissez en un parmi ceux proposés et commencez votre analyse dès maintenant ! Cherchez les
@@ -34,20 +33,23 @@ layout = html.Div(children=[
                 html.Div([
                     html.Div([
                         html.Div([
+                            html.Br(),
                             html.H4("Liens"),
-                            ". ",
-                            html.A("Mon site", href="https://antonin-lfv.github.io")
+                            html.A("- Mon site", href="https://antonin-lfv.github.io"),
+                            html.Br(),
+                            html.A("- Mon Github", href="https://github.com/antonin-lfv")
                         ],
                             className="col-6"),
                         html.Div([
+                            html.Br(),
                             de.Lottie(options=dict(background="transparent",
                                                    speed="1",
-                                                   style="width: 120px; height: 120px; display: flex; flex-flow: "
+                                                   style="width: 240px; height: 240px; display: flex; flex-flow: "
                                                          "column wrap; ",
                                                    loop=True,
                                                    autoplay=True),
-                                      width="25%",
-                                      height="25%",
+                                      width="40%",
+                                      height="40%",
                                       url='https://assets6.lottiefiles.com/packages/lf20_vEfHlN.json')
                         ],
                             className="col-6")
@@ -58,10 +60,9 @@ layout = html.Div(children=[
             ],
                 className="col-6"),
             html.Div([
-                html.Img(src='assets/images/logo.png', alt="logos")
+                html.Img(src='assets/images/logo.png', alt="logos", width="200%")
             ],
                 className="col-4"),
-            html.Div(className="col-1"),
         ],
             className="row")
     ],
