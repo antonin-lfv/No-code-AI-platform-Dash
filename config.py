@@ -2,6 +2,7 @@ class CSS_scripts:
     external_stylesheets = [
         {'rel': "stylesheet", 'src': 'styles/style.css'},
         {'rel': "stylesheet", 'href': 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css'},
+        {"rel": "stylesheet", 'href': 'https://codepen.io/chriddyp/pen/bWLwgP.css'}
     ]
 
 

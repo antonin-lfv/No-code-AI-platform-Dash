@@ -1,10 +1,28 @@
 import dash
 from dash import html, dcc, callback, Input, Output
-
-dash.register_page(__name__, path='/analyse_colonnes', title='Analyse des colonnes')
-
-layout = html.Div(children=[
-    html.H1(children='This is a page'),
+import dash_bootstrap_components as dbc
 
 
-])
+def analyse_colonne():
+    jumbotron = html.Div(
+        dbc.Container(
+            [
+                html.H1("Columns analysis", className="display-3"),
+                html.P(
+                    "Dans cette section vous allez pouvoir analyser en détail les colonnes de votre dataset",
+                    className="lead",
+                )
+            ],
+            fluid=True,
+            className="py-3",
+        ),
+        className="p-3 rounded-3",
+    )
+
+    layout = html.Div([
+        dbc.Row([
+            dbc.Col(width=1),
+            dbc.Col([html.Br(), html.Br(), html.Br(), jumbotron], width=8)
+        ])
+    ])
+    return layout
