@@ -1,12 +1,52 @@
-from dash import Dash, html, dcc
-import dash_bootstrap_components as dbc
-import dash
+from dash import Dash, html, dcc, callback, Output, Input
+from pages import home, dataset
 from config import *
+import dash_bootstrap_components as dbc
 
-app = Dash(__name__, use_pages=True, external_scripts=JS_scripts.external_scripts,
+app = Dash(__name__,
+           suppress_callback_exceptions=True,
+           external_scripts=JS_scripts.external_scripts,
            external_stylesheets=CSS_scripts.external_stylesheets)
+server = app.server
+
+navbar = dbc.NavbarSimple(
+    children=[
+        dbc.NavItem(dbc.NavLink("Page 1", href="#")),
+        dbc.DropdownMenu(
+            children=[
+                dbc.DropdownMenuItem("More pages", header=True),
+                dbc.DropdownMenuItem("Page 2", href="#"),
+                dbc.DropdownMenuItem("Page 3", href="#"),
+            ],
+            nav=True,
+            in_navbar=True,
+            label="More",
+        ),
+    ],
+    brand="NavbarSimple",
+    brand_href="#",
+    color="primary",
+    dark=True,
+)
 
 app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div([navbar]),
+    html.Div(id='page-content')
+])
+
+
+@callback(Output('page-content', 'children'), Input('url', 'pathname'))
+def display_page(pathname):
+    if pathname == '/':
+        return home.layout
+    elif pathname == '/dataset':
+        return dataset.layout
+    else:
+        return '404'
+
+
+"""app.layout = html.Div([
     html.Nav(
         html.Div([
             html.A("No-code AI platform", className="navbar-brand", href="/"),
@@ -105,7 +145,7 @@ app.layout = html.Div([
     # End footer #
 
 ],
-    className="d-flex flex-column min-vh-100")
+    className="d-flex flex-column min-vh-100")"""
 
 if __name__ == '__main__':
     app.run_server(debug=True)

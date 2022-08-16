@@ -1,8 +1,5 @@
-import dash
 from dash import html, dcc, callback, Input, Output
 import dash_extensions as de
-
-dash.register_page(__name__, path='/', title='Home')
 
 layout = html.Div(children=[
     html.Br(),
@@ -16,6 +13,7 @@ layout = html.Div(children=[
 
     html.Div([
         html.Div([
+            html.Div(className="col-1"),
             html.Div([
                 html.P("""Bienvenue sur la no-code AI platform ! Déposez vos datasets csv ou excel ou
                     choisissez en un parmi ceux proposés et commencez votre analyse dès maintenant ! Cherchez les
@@ -63,8 +61,9 @@ layout = html.Div(children=[
                 html.Img(src='assets/images/logo.png', alt="logos", width="200%")
             ],
                 className="col-4"),
+            html.Div(className="col-1"),
         ],
             className="row")
     ],
-        className='container')
+        className='container'),
 ])
