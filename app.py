@@ -11,22 +11,36 @@ server = app.server
 
 navbar = dbc.NavbarSimple(
     children=[
-        dbc.NavItem(dbc.NavLink("Page 1", href="#")),
+        dbc.NavItem(dbc.NavLink("Home", href="/")),
+        dbc.NavItem(dbc.NavLink("Data", href="/dataset")),
         dbc.DropdownMenu(
             children=[
-                dbc.DropdownMenuItem("More pages", header=True),
+                dbc.DropdownMenuItem("Analyse des colonnes", href="#"),
+                dbc.DropdownMenuItem("Graphiques", href="#"),
+                dbc.DropdownMenuItem("Matrice de corrélation", href="#"),
+            ],
+            nav=True,
+            in_navbar=True,
+            label="Pre-processing",
+            size="lg",
+        ),
+        dbc.DropdownMenu(
+            children=[
                 dbc.DropdownMenuItem("Page 2", href="#"),
                 dbc.DropdownMenuItem("Page 3", href="#"),
             ],
             nav=True,
             in_navbar=True,
-            label="More",
+            label="Machine Learning",
+            size="lg",
         ),
     ],
-    brand="NavbarSimple",
-    brand_href="#",
-    color="primary",
+    brand="No-code AI Platform",
+    brand_href="/",
+    color="dark",
     dark=True,
+    sticky="fixed",
+    links_left=True
 )
 
 app.layout = html.Div([
