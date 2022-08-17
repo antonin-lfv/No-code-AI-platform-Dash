@@ -3,7 +3,6 @@ from pages import home, dataset, analyse_colonnes, graphiques, matrice_corr
 from config import *
 import dash_bootstrap_components as dbc
 
-global df
 
 app = Dash(__name__,
            suppress_callback_exceptions=True,
@@ -71,7 +70,7 @@ def display_page(pathname):
         layout = matrice_corr.matrice_corr()
         return layout
     else:
-        return '404'
+        return html.Div('Error 404', className="first_titre")
 
 
 if __name__ == '__main__':
