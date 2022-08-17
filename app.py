@@ -55,20 +55,15 @@ app.layout = html.Div([
 @callback(Output('page-content', 'children'), Input('url', 'pathname'))
 def display_page(pathname):
     if pathname == '/':
-        layout = home.home()
-        return layout
+        return home.layout
     elif pathname == '/dataset':
-        layout = dataset.dataset()
-        return layout
+        return dataset.layout
     elif pathname == '/analyse_col':
-        layout = analyse_colonnes.analyse_colonne()
-        return layout
+        return analyse_colonnes.layout
     elif pathname == '/graphiques':
-        layout = graphiques.graphiques()
-        return layout
+        return graphiques.layout
     elif pathname == '/matrice_corr':
-        layout = matrice_corr.matrice_corr()
-        return layout
+        return matrice_corr.layout
     else:
         return html.Div('Error 404', className="first_titre")
 
